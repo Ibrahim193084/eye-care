@@ -10,7 +10,7 @@ const Doctors = () => {
         .then(data => setDoctors(data))
     },[])
     return (
-        <div>
+        <div id='doctors'>
             <h1 className="text-white text-center my-5">MEET OUR <span className="text-danger">TEAM</span></h1>
              <Row xs={1} md={4} className="g-4">
                  {doctors.map(doctor =><Doctor key={doctor.id} doctor ={doctor} />)}

@@ -3,7 +3,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 
 const Shop = () => {
     return (
-        <div>
+        <div id="shop">
             <h1 className="text-white text-center my-5">OUR <span className="text-danger">SHOP</span></h1>
               <Row xs={1} md={4} className="g-4">
               <Col>
