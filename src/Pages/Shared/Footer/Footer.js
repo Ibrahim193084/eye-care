@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         <div className="bg-dark my-5 text-white"id="contact">
         <Container>
-<Row md={4}>
+<Row md={4} xs={12}>
 <Col className="ms-5 my-5">
    <h3>Eye Care</h3>
    <h3 className="my-3">Our Contacts</h3>
@@ -19,7 +19,7 @@ const Footer = () => {
    <h6><i class="far fa-envelope"></i> eyecare@gmail.com</h6>
    <h6><i class="fas fa-phone"></i> +008150640540</h6>
    </Col>
-<Col className="ms-5 my-5" xs={6}>
+<Col className="ms-5 my-5" xs={3}>
    <h3>Quick Links</h3>
    <Stack direction="vertical" gap={2}>
  <NavLink className="navlink"
@@ -55,9 +55,9 @@ Contact
 
 </Stack>
    </Col>
-<Col className="ms-5 my-5">
+<Col xs={3} className="me-3 my-5">
  
-   <img src="https://web.programming-hero.com/static/media/ssl-commerce.1d268dce.png"></img>
+   <img className="" src="https://web.programming-hero.com/static/media/ssl-commerce.1d268dce.png"></img>
    </Col>
 </Row>
 <footer className="text-center mb-5">Copyright © 2021 Eye Care.com</footer>
