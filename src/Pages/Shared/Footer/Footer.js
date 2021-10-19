@@ -60,7 +60,7 @@ Contact
    <img className="" src="https://web.programming-hero.com/static/media/ssl-commerce.1d268dce.png"></img>
    </Col>
 </Row>
-<footer className="text-center mb-5">Copyright © 2021 Eye Care.com</footer>
+<footer className="text-center mb-5">Copyright © 2021 eyecare.com</footer>
 </Container>
    </div>
     );

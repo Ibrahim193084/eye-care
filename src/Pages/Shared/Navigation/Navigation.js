@@ -11,8 +11,9 @@ const Navigation = () => {
         <div>
             <Navbar className="fw-bold" fixed="top"  bg="light" expand="lg">
   <Container>
-    <img style={{height:'30px', width:'40px', borderRadius:'360px'}} src="https://cdn5.vectorstock.com/i/1000x1000/92/04/eye-care-logo-template-vector-12209204.jpg"></img>
-    <Navbar.Brand>Eye Care</Navbar.Brand>
+    
+    <Navbar.Brand><img style={{height:'30px', width:'40px', borderRadius:'360px'}} src="https://cdn5.vectorstock.com/i/1000x1000/92/04/eye-care-logo-template-vector-12209204.jpg"></img>
+      Eye Care</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto ms-5">

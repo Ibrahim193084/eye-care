@@ -22,8 +22,8 @@ const DoctorDetails = () => {
     return (
         <div>
               <Navigation></Navigation>
-            <div className="d-flex justify-content-center align-items-center">
-                <div className="me-auto text-white">
+            <div className="row">
+                <div className=" col-md-6 me-auto text-white mt-5">
                     <h1>{details.name}</h1>
                     <h3>{details.category}</h3>
                     <p>{details.about}</p>
@@ -33,7 +33,7 @@ const DoctorDetails = () => {
                     <i className="fab fa-twitter ms-4 display-6"></i>
                     <i className="fab fa-whatsapp ms-4 display-6"></i>
                 </div>
-                <div>
+                <div className="col-md-6">
                     <img style={{height: '500px' , width: '700px'}} src={details.img} alt="" />
                 </div>
             </div>
