@@ -16,7 +16,7 @@ const Shop = () => {
               Price: $5
           </Card.Text>
          <Link to="/addtocart">
-        <button className="btn btn-primary">Add to cart</button></Link>
+        <button className="btn btn-primary"><i class="fas fa-shopping-cart"></i> Add to cart</button></Link>
         </Card.Body>
       </Card>
     </Col>
@@ -28,7 +28,7 @@ const Shop = () => {
           <Card.Text>
               Price: $8
           </Card.Text>
-         <Link to="/addtocart"><button className="btn btn-primary">Add to cart</button></Link>
+         <Link to="/addtocart"><button className="btn btn-primary"><i class="fas fa-shopping-cart"></i> Add to cart</button></Link>
         </Card.Body>
       </Card>
     </Col>
@@ -40,7 +40,7 @@ const Shop = () => {
           <Card.Text>
               Price: $9
           </Card.Text>
-          <Link to="/addtocart"> <button className="btn btn-primary">Add to cart</button></Link>
+          <Link to="/addtocart"> <button className="btn btn-primary"><i class="fas fa-shopping-cart"></i> Add to cart</button></Link>
         </Card.Body>
       </Card>
     </Col>
@@ -53,7 +53,7 @@ const Shop = () => {
               Price: $6
           </Card.Text>
          <Link to="/addtocart">
-        <button className="btn btn-primary">Add to cart</button></Link>
+        <button className="btn btn-primary"><i class="fas fa-shopping-cart"></i> Add to cart</button></Link>
         </Card.Body>
       </Card>
     </Col>
