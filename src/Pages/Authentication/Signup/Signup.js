@@ -27,7 +27,7 @@ const Signup = () => {
                 <input className="btn btn-primary" type="submit" value="Sign up" />
             </form>
             </div>
-            <p className="text-danger text-center">{error}</p>
+            <p className="text-danger text-center fw-bold">{error}</p>
             <div className=" text-center mt-3">
             <img onClick={signInWithGoogle} src="https://img.icons8.com/color/48/000000/google-logo.png"/>
             <img src="https://img.icons8.com/fluency/50/000000/facebook-new.png"/>

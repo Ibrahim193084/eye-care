@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import {
     Route,
     Redirect,
@@ -9,9 +10,13 @@ import useAuth from '../hooks/useAuth';
   
 
 const PrivateRoute = ({children, ...rest}) => {
-    const {user} = useAuth();
+    const {user, isLoading} = useAuth();
     const location = useLocation();
     const history = useHistory()
+
+    if(isLoading){
+        return <Spinner animation="border" variant="danger"></Spinner>
+    }
     return (
         <Route
         {...rest}

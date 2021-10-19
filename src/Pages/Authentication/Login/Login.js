@@ -6,7 +6,7 @@ import Navigation from './../../Shared/Navigation/Navigation';
 import Home from './../../Home/Home';
 
 const Login = () => {
-    const {signInWithGoogle,user,error,handleLogIn,handleEmail,handlePassword,sendVerification,setError,setUser} =  useAuth();
+    const {signInWithGoogle,user,error,handleLogIn,handleEmail,handlePassword,sendVerification,setError,setUser,setIsLoading} =  useAuth();
     const location = useLocation();
     const history = useHistory();
 
@@ -19,10 +19,11 @@ const Login = () => {
     sendVerification()
     history.push(redirect_uri);
   })
-  .catch((error) => {
-    const errorMessage = error.message;
-    setError(errorMessage)
-  });
+  .finally(()=>setIsLoading(false))
+//   .catch((error) => {
+//     const errorMessage = error.message;
+//     setError(errorMessage)
+//   });
     }
     return (
         <div> 
@@ -40,7 +41,7 @@ const Login = () => {
                 <input className="btn btn-primary" type="submit" value="Log in" />
             </form>
             </div>
-            <p className="text-danger text-center">{error}</p>
+            <p className="text-danger text-center fw-bold">{error}</p>
             <div className=" text-center mt-3">
             <img onClick={handleGoogleLogin} src="https://img.icons8.com/color/48/000000/google-logo.png"/>
             <img src="https://img.icons8.com/fluency/50/000000/facebook-new.png"/>

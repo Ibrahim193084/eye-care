@@ -9,12 +9,14 @@ const useFirebase = () =>{
     const [user , setUser] = useState({});
     const [error, setError] = useState('');
     const [email, setEmail] = useState('')
-    const [password,setPassword] = useState('')
+    const [password, setPassword] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     // google sign in handler
     // -------------------------
     const signInWithGoogle = () =>{
+      setIsLoading(true)
        return signInWithPopup(auth, googleProvider)
     }
     // sign in and sign up with email and password
@@ -29,6 +31,8 @@ const useFirebase = () =>{
     // ---------------------
     const handleSignUp = (e) =>{
       e.preventDefault()
+      password.length<6 && setError('password must be at least 6 characters long')
+      !/(?=.*[!@#$%^&*])/.test(password) && setError('password must be at least a spicial character or symbol')
       createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const {displayName, email, photoURL} = userCredential.user;
@@ -43,7 +47,7 @@ const useFirebase = () =>{
       }).catch((error) => {
         const errorMessage = error.message;
         // The email of the user's account used.
-        setError(errorMessage)
+        // setError(errorMessage)
       });
       // console.log(user)
     }
@@ -52,6 +56,7 @@ const useFirebase = () =>{
     const handleLogIn = (e) =>{
       e.preventDefault()
       password.length<6 && setError('password must be at least 6 characters long')
+      !/(?=.*[!@#$%^&*])/.test(password) && setError('password must be at least a spicial character or symbol')
       signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const {displayName, email, photoURL} = userCredential.user;
@@ -66,7 +71,7 @@ const useFirebase = () =>{
       }).catch((error) => {
         const errorMessage = error.message;
         // The email of the user's account used.
-        setError(errorMessage)
+        // setError(errorMessage)
       });
       console.log(user)
     }
@@ -88,22 +93,24 @@ const useFirebase = () =>{
         } else {
           setUser({})
         }
+        setIsLoading(false)
       });
       return unsubscribed;
     },[])
 
     // handle log out
     const logOut = () =>{
+      setIsLoading(true)
       signOut(auth).then(() => {
         setUser({})
-      }).catch((error) => {
-        setError(error.message)
-      });
+      })
+      .finally(()=>setIsLoading(false))
+      // .catch((error) => {
+      //   // setError(error.message)
+      // });
     }
     
-
-
-    return{user,setUser,setError, error, signInWithGoogle, logOut, handleEmail, handlePassword,handleSignUp,handleLogIn,sendVerification}
+    return{user,setUser,setError, error, signInWithGoogle, logOut, handleEmail, handlePassword,handleSignUp,handleLogIn,sendVerification, setIsLoading, isLoading}
 }
 
 export default useFirebase;
