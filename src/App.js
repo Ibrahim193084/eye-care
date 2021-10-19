@@ -7,10 +7,14 @@ import DoctorDetails from './Pages/Doctors/DoctorDetails/DoctorDetails';
 import NotFound from './Pages/NotFound/NotFound';
 import Login from './Pages/Authentication/Login/Login';
 import Signup from './Pages/Authentication/Signup/Signup';
+import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import AddToCart from './Pages/Shop/AddToCart/AddToCart';
 
 function App() {
   return (
     <div className="bg-secondary">
+      <AuthProvider>
       <Router>
         <Switch>
           <Route exact path="/">
@@ -19,12 +23,15 @@ function App() {
           <Route path="/home">
           <Home></Home>
           </Route>
-          <Route path="/details/:serviceId">
+          <PrivateRoute path="/details/:serviceId">
           <ServiceDetails></ServiceDetails>
-          </Route>
-          <Route path="/doctorDetails/:doctorsId">
+          </PrivateRoute>
+          <PrivateRoute path="/doctorDetails/:doctorsId">
             <DoctorDetails></DoctorDetails>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/addtocart">
+            <AddToCart></AddToCart>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -35,8 +42,8 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
-
       </Router>
+      </AuthProvider>
    
    
     </div>

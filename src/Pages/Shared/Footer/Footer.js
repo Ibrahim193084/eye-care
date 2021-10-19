@@ -14,6 +14,10 @@ const Footer = () => {
 <Row md={4}>
 <Col className="ms-5 my-5">
    <h3>Eye Care</h3>
+   <h3 className="my-3">Our Contacts</h3>
+   <h6><i class="fas fa-map-marker-alt"></i> 350, Chhagalnaiya, Feni</h6>
+   <h6><i class="far fa-envelope"></i> eyecare@gmail.com</h6>
+   <h6><i class="fas fa-phone"></i> +008150640540</h6>
    </Col>
 <Col className="ms-5 my-5" xs={6}>
    <h3>Quick Links</h3>
@@ -52,10 +56,8 @@ Contact
 </Stack>
    </Col>
 <Col className="ms-5 my-5">
-   <h3 className="mb-3">Our Contacts</h3>
-   <h6><i class="fas fa-map-marker-alt"></i> 350, Chhagalnaiya, Feni</h6>
-   <h6><i class="far fa-envelope"></i> eyecare@gmail.com</h6>
-   <h6><i class="fas fa-phone"></i> +008150640540</h6>
+ 
+   <img src="https://web.programming-hero.com/static/media/ssl-commerce.1d268dce.png"></img>
    </Col>
 </Row>
 <footer className="text-center mb-5">Copyright © 2021 Eye Care.com</footer>

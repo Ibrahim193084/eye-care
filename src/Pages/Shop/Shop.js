@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
     return (
@@ -14,8 +15,8 @@ const Shop = () => {
           <Card.Text>
               Price: $5
           </Card.Text>
-         
-        <button className="btn btn-primary">Add to cart</button>
+         <Link to="/addtocart">
+        <button className="btn btn-primary">Add to cart</button></Link>
         </Card.Body>
       </Card>
     </Col>
@@ -27,8 +28,7 @@ const Shop = () => {
           <Card.Text>
               Price: $8
           </Card.Text>
-         
-        <button className="btn btn-primary">Add to cart</button>
+         <Link to="/addtocart"><button className="btn btn-primary">Add to cart</button></Link>
         </Card.Body>
       </Card>
     </Col>
@@ -40,8 +40,7 @@ const Shop = () => {
           <Card.Text>
               Price: $9
           </Card.Text>
-         
-        <button className="btn btn-primary">Add to cart</button>
+          <Link to="/addtocart"> <button className="btn btn-primary">Add to cart</button></Link>
         </Card.Body>
       </Card>
     </Col>
@@ -53,8 +52,8 @@ const Shop = () => {
           <Card.Text>
               Price: $6
           </Card.Text>
-         
-        <button className="btn btn-primary">Add to cart</button>
+         <Link to="/addtocart">
+        <button className="btn btn-primary">Add to cart</button></Link>
         </Card.Body>
       </Card>
     </Col>

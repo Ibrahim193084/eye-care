@@ -25,6 +25,7 @@ const ServiceDetails = () => {
                     <h1>{details.name}</h1>
                     <p>{details.description}</p>
                     <h3>Surgery Cost: ${details.cost}</h3>
+                    <button className="btn btn-primary ms-2 mt-3">Make an appointment</button>
                 </div>
                 <div>
                     <img style={{height: '500px' , width: '700px'}} src={details.img} alt="" />
