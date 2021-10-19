@@ -1,5 +1,5 @@
 import initializeAuthentication from './../Firebase/firebase.init';
-import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut,  createUserWithEmailAndPassword,  signInWithEmailAndPassword,  sendEmailVerification} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider,onAuthStateChanged,signOut,  createUserWithEmailAndPassword,  signInWithEmailAndPassword,  sendEmailVerification, updateProfile} from "firebase/auth";
 import { useEffect, useState } from 'react';
 
 
@@ -10,6 +10,7 @@ const useFirebase = () =>{
     const [error, setError] = useState('');
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [name, setName] = useState('')
     const [isLoading, setIsLoading] = useState(true)
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
@@ -27,6 +28,20 @@ const useFirebase = () =>{
     const handlePassword = (e) =>{
       setPassword(e.target.value)
     }
+    const handleName = (e)=>{
+      setName(e.target.value)
+    }
+    // set user name
+    // ------------------
+    const setUserName = () =>{
+      updateProfile(auth.currentUser, {
+        displayName: name
+      }).then(() => {
+        // Profile updated!
+        // ...
+      })
+    }
+
     // handle sign up
     // ---------------------
     const handleSignUp = (e) =>{
@@ -44,6 +59,7 @@ const useFirebase = () =>{
         }
         setUser(userInfo)
         sendVerification()
+        setUserName()
       }).catch((error) => {
         const errorMessage = error.message;
         // The email of the user's account used.
@@ -110,7 +126,7 @@ const useFirebase = () =>{
       // });
     }
     
-    return{user,setUser,setError, error, signInWithGoogle, logOut, handleEmail, handlePassword,handleSignUp,handleLogIn,sendVerification, setIsLoading, isLoading}
+    return{user,setUser,setError, error, signInWithGoogle, logOut, handleEmail, handlePassword,handleSignUp,handleLogIn,sendVerification, setIsLoading, isLoading, handleName}
 }
 
 export default useFirebase;

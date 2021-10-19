@@ -6,7 +6,7 @@ import useAuth from '../../../hooks/useAuth';
 import Home from '../../Home/Home';
 
 const Signup = () => {
-    const{signInWithGoogle,user,handleEmail,handlePassword,handleSignUp,error}= useAuth()
+    const{signInWithGoogle,user,handleEmail,handlePassword,handleSignUp,error,handleName}= useAuth()
     return (
         <div>
           {!user.email?  <div>
@@ -18,7 +18,7 @@ const Signup = () => {
               
             <form onSubmit={handleSignUp} action="">
                 
-                <input onChange="" className="my-2 p-1" placeholder="Name" type="text" name="email" id="" />
+                <input onChange={handleName} className="my-2 p-1" placeholder="Name" type="text" name="email" id="" />
                 <br />
                 <input onChange={handleEmail} className="my-2 p-1" placeholder="Email" type="email" name="email" id="" required/>
                 <br />
