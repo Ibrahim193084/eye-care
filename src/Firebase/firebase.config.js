@@ -12,10 +12,3 @@ const firebaseConfig = {
 
 
 
-
-//   apiKey: "AIzaSyCqwOJjfJz8S1IYEbGmGOzd8SSjsEq-fSw",
-//   authDomain: "eye-care-5.firebaseapp.com",
-//   projectId: "eye-care-5",
-//   storageBucket: "eye-care-5.appspot.com",
-//   messagingSenderId: "573323159476",
-//   appId: "1:573323159476:web:a46ad28dc85ef77040f4e1"
